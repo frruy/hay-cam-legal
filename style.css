@@ -1,0 +1,137 @@
+:root {
+    --bg: #faf7f2;
+    --surface: #ffffff;
+    --text: #1c1a17;
+    --muted: #6b655d;
+    --accent: #c97a3b;
+    --border: #e8e3d9;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #16140f;
+        --surface: #1f1c17;
+        --text: #f1ece1;
+        --muted: #9a9286;
+        --accent: #e89f5e;
+        --border: #2c2820;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+}
+
+header .brand {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+header .meta {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+h2 {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+p, li { font-size: 16px; }
+
+ul { padding-left: 22px; }
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+a:hover { border-bottom-color: var(--accent); }
+
+.cards {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 28px;
+}
+
+@media (max-width: 540px) {
+    .cards { grid-template-columns: 1fr; }
+    .wrap { padding: 32px 18px 64px; }
+    header h1 { font-size: 26px; }
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: block;
+    color: inherit;
+    border-bottom: 1px solid var(--border);
+}
+
+.card:hover { border-color: var(--accent); }
+
+.card .title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+
+.card .desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+nav.top {
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+
+nav.top a { color: var(--muted); }
